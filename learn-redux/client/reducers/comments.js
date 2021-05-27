@@ -4,12 +4,14 @@ function postComments(state = [], action) {
             return [...state,{
                 user: action.author,
                 text: action.comment
-            }]
+            }];
         case 'REMOVE_COMMENT':
             return [
-                //Need to finish this part here.
+                //Start at the begining of the array upto the one we want to delete.
+                ...state.slice(0,action.i),
+                //Returns everything after the one we wanted to delete.
+                ...state.slice(action.i + 1)
             ]
-            return state
         default:
             return state
     }
