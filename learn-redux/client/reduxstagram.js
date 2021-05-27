@@ -14,6 +14,11 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {Provider} from 'react-redux';
 import store, {history} from './store';
 
+import Raven from 'raven-js';
+import * as Sentry from "@sentry/browser";
+import { Integrations } from "@sentry/tracing";
+
+// myUndefinedFunction();
 const router = (
     <Provider store ={store}>
         <Router history={history}>
